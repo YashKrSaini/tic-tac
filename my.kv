@@ -1,0 +1,85 @@
+<MyGrid>
+
+	bttn_1 : bttn_1
+	bttn_2 : bttn_2
+	bttn_3 : bttn_3
+	bttn_4 : bttn_4
+	bttn_5 : bttn_5
+	bttn_6 : bttn_6
+	bttn_7 : bttn_7
+	bttn_8 : bttn_8
+	bttn_9 : bttn_9
+	label_main : label_main
+	yes_bttn : yes_bttn
+	no_bttn :no_bttn
+	row_1 : row_1
+	
+	GridLayout :
+		cols : 1
+		size : root.width , root.height
+		GridLayout :
+			cols : 3
+			padding : 10,10,10,10
+			Button :
+				text : 'New'
+				size_hint : 0.5, 0.5
+				on_press : root.new()
+			Label :
+				id : label_main
+				text : 'Player 1'
+			Button :
+				text : 'Exit'
+				size_hint : 0.5, 0.5
+				on_press : root.exit('ee')
+		GridLayout:
+			id : row_1
+			cols : 3
+			Button :
+				id : bttn_1
+				on_press :
+					root.fun_game('1')
+			Button :
+				id : bttn_2
+				on_press :
+					root.fun_game('2')
+			Button :
+				id : bttn_3
+				on_press :
+					root.fun_game('3')
+		GridLayout:
+			cols : 3
+			Button :
+				id : bttn_4
+				on_press :
+					root.fun_game('4')
+			Button :
+				id : bttn_5
+				on_press :
+					root.fun_game('5')
+			Button :
+				id : bttn_6
+				on_press :
+					root.fun_game('6')
+		GridLayout:
+			cols : 3
+			Button :
+				id : bttn_7
+				on_press :
+					root.fun_game('7')
+			Button :
+				id : bttn_8
+				on_press :
+					root.fun_game('8')
+			Button :
+				id : bttn_9
+				on_press :
+					root.fun_game('9')
+		GridLayout :
+			cols : 2
+			padding : 10,10,10,10
+			Button :
+				id : yes_bttn
+				on_press : root.exit('ey')
+			Button : 
+				id  : no_bttn
+				on_press : root.exit('en')
