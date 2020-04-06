@@ -42,12 +42,15 @@ def ai_fun(new_av,loc,string):
 	new_list=[]
 	list_for_word=[]
 	for i in range(length):
-		if string_win[i][le]==loc:
-			new_list.append(string_win[i])
-			try :
-				list_for_word.append(string_win[i][le+1])
-			except :
-				pass
+		try :
+			if string_win[i][le]==loc:
+				new_list.append(string_win[i])
+				try :
+					list_for_word.append(string_win[i][le+1])
+				except :
+					pass
+		except :
+			pass
 	print ('list for word :',list_for_word)	
 	try:
 		candidate=mode(list_for_word)
