@@ -1,2 +1,2 @@
 # tic-tac
-Basi kivy example
+Basic kivy example
