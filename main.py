@@ -11,6 +11,7 @@ from kivy.uix.widget import Widget
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
+from second import algo
 # Main child class from parent Widget class
 global file_win
 global file_loss
@@ -33,6 +34,7 @@ print('Loss:',string_loss)
 
 
 def ai_fun(new_av,loc,string):
+	print('************',new_av,loc,string)#global string_loss
 	global string_loss
 	def list_making(l):
 		pass
@@ -277,6 +279,7 @@ class MyGrid(Widget):
 			if self.label_main.text=='Player 2':
 				available=['1','2','3','4','5','6','7','8','9'] # it should be created at new  and at starting only 
 				new_av=[]
+				#sleep(2)
 				if self.bttn_1.text!='':
 					available[0]=''
 				if self.bttn_2.text!='':
@@ -303,14 +306,16 @@ class MyGrid(Widget):
 				print ('string :',string)
 				if len(new_av)!=0:
 					ran_loc_str=choice(new_av) # replace this line with ai code
-					candidate=ai_fun(new_av,loc,string)
+					candidate = algo.main(string) # main algo line
+					#candidate=ai_fun(new_av,loc,string)
 					if candidate=='NOT FOUND':
 						self.fun_game(ran_loc_str)
 					else :
 						self.fun_game(candidate)
 				else :
 					win_declare('n')
-			elif self.label_main.text=='Player 1':
+			###########   Uncomment this code to Turn ON dual auto player Mode
+			"""elif self.label_main.text=='Player 1':
 				available=['1','2','3','4','5','6','7','8','9'] # it should be created at new  and at starting only 
 				new_av=[]
 				if self.bttn_1.text!='':
@@ -339,7 +344,7 @@ class MyGrid(Widget):
 					ran_loc_str=choice(new_av)
 					self.fun_game(ran_loc_str)
 				else :
-					win_declare('n')
+					win_declare('n')"""
 		
 
 		auto_player()
